@@ -1,23 +1,27 @@
 {
   "name": "genesis",
   "version": "1.0.0",
+  "proxy": "http//localhost:5000",
   "description": "Project Genesis",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Sean Encarnacion",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-async-handler": "^1.2.0",
     "mongoose": "^6.3.0"
   },
   "devDependencies": {
+    "concurrently": "^7.1.0",
     "nodemon": "^2.0.15"
   }
 }
