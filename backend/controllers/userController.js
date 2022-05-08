@@ -10,6 +10,8 @@ const User = require('../models/userModel')
 
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password } = req.body
+
+    console.log("umabot dito")
     
     if(!name || !email || !password){
         res.status(400)
